@@ -2,17 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { PowerPlantService, UserService } from '../shared';
+import {User} from '../shared/models/user.model';
 
 @Component({
   selector: 'app-home-page',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  templateUrl: './home.component.html'
 })
 export class HomeComponent implements OnInit {
 
+  user: User;
   isAuthenticated: boolean;
-  tags: Array<string> = [];
-  tagsLoaded = false;
 
   constructor(
     private router: Router,
