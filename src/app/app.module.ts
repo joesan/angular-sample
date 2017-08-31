@@ -16,11 +16,17 @@ import {
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 
-const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: true });
+import { routing } from './app.routing';
+import {HomeComponent} from './home/home.component';
+import {AuthenticationService} from "./shared/services/authentication.service";
+import {AlertService} from "./shared/services/alert.service";
+
+// const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: false });
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
     FooterComponent,
     HeaderComponent,
     LoginComponent,
@@ -29,12 +35,14 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
   imports: [
     SharedModule,
     BrowserModule,
-    rootRouting
+    routing
   ],
   providers: [
     ApiService,
     AuthGuard,
     JwtService,
+    AuthenticationService,
+    AlertService,
     ProfilesService,
     UserService
   ],
