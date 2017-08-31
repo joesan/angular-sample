@@ -13,6 +13,8 @@ import {
   SharedModule,
   UserService
 } from './shared';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: true });
 
@@ -21,6 +23,8 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
     AppComponent,
     FooterComponent,
     HeaderComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     SharedModule,

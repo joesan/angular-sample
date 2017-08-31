@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+import { ListErrorsComponent } from './list-errors.component';
 
 @NgModule({
   imports: [
@@ -13,10 +14,12 @@ import { RouterModule } from '@angular/router';
     RouterModule
   ],
   declarations: [
+    ListErrorsComponent,
   ],
   exports: [
     CommonModule,
     FormsModule,
+    ListErrorsComponent,
     ReactiveFormsModule,
     HttpModule,
     RouterModule
