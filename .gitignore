@@ -1,0 +1,4 @@
+*.idea
+*.ipr
+*.iml
+node_modules/*
