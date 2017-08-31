@@ -18,8 +18,8 @@ import { RegisterComponent } from './register/register.component';
 
 import { routing } from './app.routing';
 import {HomeComponent} from './home/home.component';
-import {AuthenticationService} from "./shared/services/authentication.service";
-import {AlertService} from "./shared/services/alert.service";
+import {AuthenticationService} from './shared/services/authentication.service';
+import {AlertService} from './shared/services/alert.service';
 
 // const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: false });
 
@@ -30,7 +30,7 @@ import {AlertService} from "./shared/services/alert.service";
     FooterComponent,
     HeaderComponent,
     LoginComponent,
-    RegisterComponent,
+    RegisterComponent
   ],
   imports: [
     SharedModule,
