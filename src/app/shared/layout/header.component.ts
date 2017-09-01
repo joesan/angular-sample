@@ -16,6 +16,8 @@ export class HeaderComponent {
   }
 
   isLoggedIn() {
-    return this.authService.loggedIn();
+    const logg = this.authService.loggedIn();
+    console.log('is logged in ' + logg);
+    return logg;
   }
 }
