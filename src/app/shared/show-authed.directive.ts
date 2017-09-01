@@ -8,7 +8,7 @@ import {
 
 import { UserService } from './services/user.service';
 
-@Directive({ selector: '[appShowAuthed]' })
+@Directive({ selector: '[showAuthed]' })
 export class ShowAuthedDirective implements OnInit {
 
   condition: boolean;
@@ -30,6 +30,7 @@ export class ShowAuthedDirective implements OnInit {
   }
 
   @Input() set showAuthed(condition: boolean) {
+    console.log(condition);
     this.condition = condition;
   }
 }

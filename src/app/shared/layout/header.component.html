@@ -2,8 +2,9 @@
   <div class="container">
     <a class="navbar-brand" routerLink="/">plant-simulator</a>
 
-    <!-- Show this for logged in users -->
-    <ul class="nav navbar-nav pull-xs-right">
+    <!-- Show this for logged out users -->
+    <ul *showAuthed="false"
+        class="nav navbar-nav pull-xs-right">
 
       <li class="nav-item">
         <a class="nav-link"
@@ -13,6 +14,10 @@
         </a>
       </li>
 
+    </ul>
+    <ul *showAuthed="true"
+        class="nav navbar-nav pull-xs-right">
+      <!-- Show this for logged in users -->
       <li class="nav-item">
         <a class="nav-link"
           [routerLink]="['/profile', currentUser.id]"
