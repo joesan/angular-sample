@@ -5,7 +5,6 @@
     <!-- Show this for logged out users -->
     <ul *showAuthed="false"
         class="nav navbar-nav pull-xs-right">
-
       <li class="nav-item">
         <a class="nav-link"
           routerLink="/register"
@@ -13,19 +12,23 @@
           Sign Up
         </a>
       </li>
-
     </ul>
+
+    <!-- Show this for logged in users -->
     <ul *showAuthed="true"
         class="nav navbar-nav pull-xs-right">
-      <!-- Show this for logged in users -->
       <li class="nav-item">
         <a class="nav-link"
           [routerLink]="['/profile', currentUser.id]"
           routerLinkActive="active">
-          <img [src]="currentUser.image" *ngIf="currentUser.image" class="user-pic" />
           {{ currentUser.email }}
         </a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link"
+           [routerLink]="['/login']">
+           Logout
+        </a></li>
     </ul>
 
   </div>

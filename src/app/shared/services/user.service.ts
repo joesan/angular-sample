@@ -25,6 +25,7 @@ export class UserService {
   }
 
   create(user: User) {
+    console.log('Creating a new user');
     return this.http.post('/api/users', user, this.jwt()).map((response: Response) => response.json());
   }
 
@@ -45,7 +46,10 @@ export class UserService {
   private jwt() {
     // create authorization header with jwt token
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    console.log('***************************');
+    console.log(currentUser);
     if (currentUser && currentUser.token) {
+      console.log('current user has a token');
       this.payload = currentUser;
       const headers = new Headers({ 'Authorization': 'Bearer ' + currentUser.token });
       return new RequestOptions({ headers: headers });
