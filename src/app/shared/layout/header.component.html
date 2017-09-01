@@ -17,18 +17,25 @@
     <!-- Show this for logged in users -->
     <ul *ngIf='isLoggedIn() == true'
         class="nav navbar-nav pull-xs-right">
-      <li class="nav-item">
-        <a class="nav-link"
+      <li class="nav-item nav-link">
+        <!-- a class="nav-link"
           [routerLink]="['/profile', currentUser.id]"
           routerLinkActive="active">
           {{ currentUser.firstname }}
-        </a>
+        </a -->
+        <a href='javascript:void(0);'>{{ currentUser.firstName }}, {{ currentUser.lastName }}</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link"
+        <!--a class="nav-link"
            [routerLink]="['/login']">
            Logout
-        </a></li>
+        </a -->
+        <a class="nav-link"
+           routerLink="/login"
+           routerLinkActive="active">
+          Logout
+        </a>
+      </li>
     </ul>
 
   </div>

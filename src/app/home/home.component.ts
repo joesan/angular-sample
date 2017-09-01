@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 import { PowerPlantService, UserService } from '../shared';
 import {User} from '../shared/models/user.model';
@@ -21,7 +20,7 @@ export class HomeComponent implements OnInit {
   }
 
   deleteUser(id: number) {
-    this.userService.delete(id).subscribe(() => { this.loadAllUsers() });
+    this.userService.delete(id).subscribe(() => { this.loadAllUsers(); });
   }
 
   private loadAllUsers() {
