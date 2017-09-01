@@ -2,19 +2,20 @@ import { Component, OnInit } from '@angular/core';
 
 import { User } from '../models';
 import { UserService } from '../services';
+import {AuthenticationService} from "../services/authentication.service";
 
 @Component({
   selector: 'app-layout-header',
   templateUrl: './header.component.html'
 })
-export class HeaderComponent implements OnInit {
-
-  currentUser: User;
-
+export class HeaderComponent {
   constructor(
-    private userService: UserService
+    private authService: AuthenticationService
   ) {}
-  ngOnInit() {
-    this.currentUser = this.userService.getCurrentUser();
+
+  isLoggedIn() {
+    const isLogged = this.authService.loggedIn();
+    console.log('isLogged = ' + isLogged);
+    return isLogged;
   }
 }
