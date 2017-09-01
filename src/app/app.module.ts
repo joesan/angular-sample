@@ -23,17 +23,21 @@ import {AlertService} from './shared/services/alert.service';
 import {BaseRequestOptions} from '@angular/http';
 import {MockBackend} from '@angular/http/testing';
 import {fakeBackendProvider} from './shared/services/fake-backend';
+import { PowerplantComponent } from './powerplant/powerplant.component';
+import { AlertComponent } from './shared/alert/alert.component';
 
 // const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: false });
 
 @NgModule({
   declarations: [
     AppComponent,
+    AlertComponent,
     HomeComponent,
     FooterComponent,
     HeaderComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    PowerplantComponent
   ],
   imports: [
     SharedModule,

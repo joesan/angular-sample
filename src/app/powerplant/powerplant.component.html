@@ -1,0 +1,11 @@
+<div class="twelve wide column">
+  <div class="value">
+    MaxPower: {{ powerPlant.maxPower }} MinPower: {{ powerPlant.minPower }}
+  </div>
+  <div class="value">
+    PowerPlantType: {{ powerPlant.powerPlantType }} Organization: {{ powerPlant.powerPlantName }}
+  </div>
+  <div *ngIf="powerPlant.rampRateInSeconds && powerPlant.rampPowerRate" class="value">
+    RampPowerRate: {{ powerPlant.rampPowerRate }} RampRateInSeconds: {{ powerPlant.rampRateInSeconds }}
+  </div>
+</div>

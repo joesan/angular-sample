@@ -9,38 +9,22 @@ import {User} from '../shared/models/user.model';
   templateUrl: './home.component.html'
 })
 export class HomeComponent implements OnInit {
+  currentUser: User;
+  users: User[] = [];
 
-  user: User;
-  isAuthenticated: boolean;
-
-  constructor(
-    private router: Router,
-    private userService: UserService
-  ) {}
-
-  ngOnInit() {
-    this.userService.isAuthenticated.subscribe(
-      (authenticated) => {
-        this.isAuthenticated = authenticated;
-
-        // set the article list accordingly
-        if (authenticated) {
-          this.setListTo('feed');
-        } else {
-          this.setListTo('all');
-        }
-      }
-    );
+  constructor(private userService: UserService) {
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
   }
 
-  setListTo(type: string = '', filters: Object = {}) {
-    // If feed is requested but user is not authenticated, redirect to login
-    if (type === 'feed' && !this.isAuthenticated) {
-      this.router.navigateByUrl('/login');
-      return;
-    }
+  ngOnInit() {
+    this.loadAllUsers();
+  }
 
-    // Otherwise, set the list object
-    // this.listConfig = {type: type, filters: filters};
+  deleteUser(id: number) {
+    this.userService.delete(id).subscribe(() => { this.loadAllUsers() });
+  }
+
+  private loadAllUsers() {
+    this.userService.getAll().subscribe(users => { this.users = users; });
   }
 }

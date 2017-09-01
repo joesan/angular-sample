@@ -12,8 +12,10 @@ export function fakeBackendFactory(backend: MockBackend, options: BaseRequestOpt
 
             // authenticate
             if (connection.request.url.endsWith('/api/authenticate') && connection.request.method === RequestMethod.Post) {
-                // get parameters from post request
-                const params = JSON.parse(connection.request.getBody());
+              // get parameters from post request
+              const params = JSON.parse(connection.request.getBody());
+              console.log('Printing the params in backend');
+              console.log(params);
 
                 // find if any user matches login credentials
               const filteredUsers = users.filter(user => {

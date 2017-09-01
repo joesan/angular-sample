@@ -1,6 +1,6 @@
 <div class="home-page">
 
-  <div class="container page">
+  <!--div class="container page">
     <div class="row">
 
       <div class="col-md-9">
@@ -13,13 +13,6 @@
                  All PowerPlants
               </a>
             </li >
-            <!--li class="nav-item">
-              <a class="nav-link"
-                 [ngClass]="{'active': listConfig.type === 'all' && !listConfig.filters.tag}"
-                 (click)="setListTo('all')">
-                 All PowerPlants
-              </a>
-            </li-->
             <li class="nav-item" [hidden]="!listConfig.filters.tag">
               <a class="nav-link active">
                 <i class="ion-pound"></i> {{ listConfig.filters.tag }}
@@ -27,9 +20,29 @@
             </li>
           </ul>
         </div>
-
-        <!-- article-list [limit]="10" [config]="listConfig"></article-list -->
       </div>
     </div>
+  </div -->
+
+
+  <div class="col-md-6 col-md-offset-3">
+    <h1>Hi {{currentUser.firstName}}!</h1>
+    <p>You're logged in with Angular 2!!</p>
+    <h3>All registered users:</h3>
+    <ul>
+      <li *ngFor="let user of users">
+        {{user.username}} ({{user.firstName}} {{user.lastName}})
+        - <a (click)="deleteUser(user.id)">Delete</a>
+      </li>
+    </ul>
+    <p><a [routerLink]="['/login']">Logout</a></p>
   </div>
-</div>
+
+  <div class="ui grid posts">
+    listing all PowerPlants
+    <app-powerplant
+      *ngFor="let powerPlant of powerPlants"
+      [powerPlant]="powerPlant">
+    </app-powerplant>
+  </div>
+</div >

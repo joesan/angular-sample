@@ -32,15 +32,6 @@ export class ApiService {
      return Observable.throw(error.json());
   }
 
-  fetchAllPowerPlants(active: boolean): void {
-    this.loading = true;
-    this.http.request('http://localhost:9000/powerPlants?active=${active}')
-      .subscribe((res: Response) => {
-        this.data = res.json(); // TODO: Map this response type to PowerPlant typescript type
-        this.loading = false;
-      });
-  }
-
   get(path: string, params: URLSearchParams = new URLSearchParams()): Observable<any> {
     return this.http.get(`${environment.api_url}${path}`, { headers: this.setHeaders(), search: params })
     .catch(this.formatErrors)
