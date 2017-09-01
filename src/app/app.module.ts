@@ -17,12 +17,12 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 
 import { routing } from './app.routing';
-import {HomeComponent} from './home/home.component';
-import {AuthenticationService} from './shared/services/authentication.service';
-import {AlertService} from './shared/services/alert.service';
-import {BaseRequestOptions} from '@angular/http';
-import {MockBackend} from '@angular/http/testing';
-import {fakeBackendProvider} from './shared/services/fake-backend';
+import { HomeComponent } from './home/home.component';
+import { AuthenticationService } from './shared/services/authentication.service';
+import { AlertService } from './shared/services/alert.service';
+import { BaseRequestOptions } from '@angular/http';
+import { MockBackend } from '@angular/http/testing';
+import { fakeBackendProvider } from './shared/services/fake-backend';
 import { PowerplantComponent } from './powerplant/powerplant.component';
 import { AlertComponent } from './shared/alert/alert.component';
 
