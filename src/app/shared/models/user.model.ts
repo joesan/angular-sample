@@ -4,6 +4,6 @@ export class User {
   firstName: string;
   lastName: string;
   password: string;
-  image: string;
+  username: string;
   constructor() {}
 }

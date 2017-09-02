@@ -25,6 +25,7 @@ import { MockBackend } from '@angular/http/testing';
 import { fakeBackendProvider } from './shared/services/fake-backend';
 import { PowerplantComponent } from './powerplant/powerplant.component';
 import { AlertComponent } from './shared/alert/alert.component';
+import {PowerPlantService} from "./shared/services/powerplant.service";
 
 // const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: false });
 
@@ -52,7 +53,7 @@ import { AlertComponent } from './shared/alert/alert.component';
     AlertService,
     ProfilesService,
     UserService,
-
+    PowerPlantService,
     // providers used to create fake backend
     fakeBackendProvider,
     MockBackend,

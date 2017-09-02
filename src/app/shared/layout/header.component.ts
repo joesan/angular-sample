@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import { User } from '../models';
-import {AuthenticationService} from '../services/authentication.service';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-layout-header',
@@ -16,8 +16,6 @@ export class HeaderComponent {
   }
 
   isLoggedIn() {
-    const logg = this.authService.loggedIn();
-    console.log('is logged in ' + logg);
-    return logg;
+    return this.authService.loggedIn();
   }
 }
