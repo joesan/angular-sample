@@ -25,7 +25,8 @@ import { MockBackend } from '@angular/http/testing';
 import { fakeBackendProvider } from './shared/services/fake-backend';
 import { PowerplantComponent } from './powerplant/powerplant.component';
 import { AlertComponent } from './shared/alert/alert.component';
-import {PowerPlantService} from "./shared/services/powerplant.service";
+import { PowerPlantService } from './shared/services/powerplant.service';
+import { VirtualScrollModule } from 'angular2-virtual-scroll';
 
 // const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: false });
 
@@ -43,6 +44,7 @@ import {PowerPlantService} from "./shared/services/powerplant.service";
   imports: [
     SharedModule,
     BrowserModule,
+    VirtualScrollModule,
     routing
   ],
   providers: [

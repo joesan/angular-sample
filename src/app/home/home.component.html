@@ -13,12 +13,22 @@
         </ul>
       </div -->
 
+      <!--div class="col-md-6 col-md-offset-2 ui grid posts">
+        listing all PowerPlants
+          <app-powerplant
+            *ngFor="let powerPlant of powerPlants"
+            [powerPlant]="powerPlant">
+          </app-powerplant>
+      </div -->
+
       <div class="col-md-6 col-md-offset-2 ui grid posts">
         listing all PowerPlants
-        <app-powerplant
-          *ngFor="let powerPlant of powerPlants"
-          [powerPlant]="powerPlant">
-        </app-powerplant>
+        <virtual-scroll [powerPlants]="powerPlants" (update)="viewPortItems = $event">
+          <app-powerplant
+            *ngFor="let powerPlant of viewPortItems"
+            [powerPlant]="powerPlant">
+          </app-powerplant>
+        </virtual-scroll>
       </div>
     </div>
   </div>
